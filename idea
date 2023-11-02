@@ -1,0 +1,24 @@
+
+
+SMS -> "SAVE <message>"
+    <- "ok"
+SMS -> "READ" 
+    <- [saved message]
+
+---
+
+SMS -> "SAVE today is wednesday and that is my message"
+    <- "ok"
+SMS -> "READ"
+    <- "today is wednesday and that is my message"
+SMS -> "READ"
+    <- "today is wednesday and that is my message"
+
+SMS -> "SAVE this is my new message"
+    <- "ok"
+SMS -> "READ"
+    <- "this is my new message"
+
+---
+1. Write function names and parameters you need
+2. Fill in the functions
