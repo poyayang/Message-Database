@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/sms", methods=["Post"])
 def sms():
-    phone_number = request.form['From']
+    phone_number = request.form.get('From', tryp=str)
     receive_body = request.form.get("Body", type=str)
     # Getting received message content
     message = receive_body.upper().split()
