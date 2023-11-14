@@ -8,22 +8,22 @@ app = Flask(__name__)
 @app.route("/sms", methods=["Post"])
 def sms():
     phone_number = request.form.get('From', tryp=str)
-    receive_body = request.form.get("Body", type=str)
     # Getting received message content
-    message = receive_body.upper().split()
+    receive_body = request.form.get("Body", type=str)
     # Split the body for further use
+    message = receive_body.upper().split()
 
-    resp = MessagingResponse()
     # To send send the message back to Twilio
+    resp = MessagingResponse()
+    # If the first word is "SAVE",
     if message[0] == "SAVE":
-        # If the first word is "SAVE",
-        save_message(number=phone_number, output=receive_body[5:])
         # The message will be save from the 6 digits
+        save_message(number=phone_number, output=receive_body[5:])
         return resp == 'Message saved'
+    # If the first word is "READ",
     elif message[0] == "READ":
-        # If the first word is "READ",
-        response = read_message(number=phone_number)
         # The message will be read from the storage
+        response = read_message(number=phone_number)
         return resp == response
     else:
         print("Something might be wrong, please try again!")
