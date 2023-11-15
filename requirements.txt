@@ -13,7 +13,7 @@ calc==1.0
 certifi==2023.5.7
 charset-normalizer==3.1.0
 click==8.1.5
-contourpy==1.1.0
+contourpy==1.0.6
 cycler==0.11.0
 dependencies==7.7.0
 distlib==0.3.7
