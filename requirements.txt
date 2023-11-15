@@ -66,6 +66,6 @@ tzdata==2023.3
 urllib3==2.0.3
 virtualenv==20.24.5
 webencodings==0.5.1
-Werkzeug==2.3.7
+Werkzeug==2.2.3
 yarl==1.9.2
 yfinance==0.2.28
