@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route("/sms", methods=["Post"])
+@app.route("/sms", methods=["Get", "Post"])
 def sms():
     phone_number = request.form.get('From', tryp=str)
     # Getting received message content
@@ -32,5 +32,5 @@ def sms():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run()
     app.app_context().push()
