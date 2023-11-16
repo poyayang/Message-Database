@@ -32,5 +32,5 @@ def sms():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=443)
     app.app_context().push()
