@@ -9,7 +9,7 @@ CORS(app)
 
 @app.route("/sms", methods=["Get", "Post"])
 def sms():
-    phone_number = request.form.get('From', tryp=str)
+    phone_number = request.form.get('From', type=str)
     # Getting received message content
     receive_body = request.form.get("Body", type=str)
     # Split the body for further use
