@@ -69,3 +69,4 @@ webencodings==0.5.1
 Werkzeug==2.2.3
 yarl==1.9.2
 yfinance==0.2.28
+flask_cor==4.0.0
