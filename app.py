@@ -4,10 +4,6 @@ from flask_cors import CORS
 from message import save_message, read_message
 import os
 
-account_sid = os.environ['ACf9fdd5fbbbe2c3d3792026967b33d1a4']
-auth_token = os.environ['dbfa292b699d6edd85047661e472de3b']
-
-
 app = Flask(__name__)
 CORS(app)
 
