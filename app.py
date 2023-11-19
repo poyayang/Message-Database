@@ -1,10 +1,8 @@
 from twilio.twiml.messaging_response import MessagingResponse
 from flask import Flask, request
-from flask_cors import CORS
 from message import save_message, read_message
 
 app = Flask(__name__)
-CORS(app)
 
 
 @app.route("/", methods=["Get"])
@@ -14,9 +12,9 @@ def health_check():
 
 @app.route("/sms", methods=["Post"])
 def sms():
-    phone_number = request.form('From')
+    phone_number = request.form.get('From')
     # Getting received message content
-    receive_body = request.form("Body")
+    receive_body = request.form.get("Body")
     # Split the body for further use
     message = receive_body.upper().split()
 
