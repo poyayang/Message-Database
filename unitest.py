@@ -8,8 +8,10 @@ class TestApp(unittest.TestCase):
 
     def test_read_message(self):
         save_message(number='+447935462009', output='Good morning!')
-        read_message(number='+447935462009')
-
+        x=read_message(number='+447935462009')
+        
+        self.assertEquals(x, 'Good morning!')
 
 if __name__ == "__main__":
     unittest.main()
+

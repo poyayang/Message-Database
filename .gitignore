@@ -152,3 +152,4 @@ cython_debug/
 #.idea/
 practice.py
 practice.py
+.vscode/settings.json
