@@ -18,20 +18,24 @@ def sms():
     # Split the body for further use
     message = receive_body.upper().split()
 
-    # To send send the message back to Twilio
+    # To send the message back to Twilio
     resp = MessagingResponse()
     # If the first word is "SAVE",
     if message[0] == "SAVE":
         # The message will be save from the 6 digits
         save_message(number=phone_number, output=receive_body[5:])
-        return resp == 'Message saved'
+        resp.message('Message saved')
+
     # If the first word is "READ",
     elif message[0] == "READ":
         # The message will be read from the storage
         response = read_message(number=phone_number)
-        return resp == response
+        resp.message(response)
+
     else:
-        print("Something might be wrong, please try again!")
+        resp.message("Something might be wrong, please try again!")
+
+    return str(resp)
 
 
 if __name__ == '__main__':
