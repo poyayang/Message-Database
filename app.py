@@ -1,6 +1,6 @@
 from twilio.twiml.messaging_response import MessagingResponse
 from flask import Flask, request
-from message import save_message, read_message
+from message import message_database
 
 app = Flask(__name__)
 
@@ -9,6 +9,7 @@ app = Flask(__name__)
 def health_check():
     return "OK"
 
+database=message_database()
 
 @app.route("/sms", methods=["Post"])
 def sms():
@@ -23,13 +24,13 @@ def sms():
     # If the first word is "SAVE",
     if message[0] == "SAVE":
         # The message will be save from the 6 digits
-        save_message(number=phone_number, output=receive_body[5:])
+        database.save_message(number=phone_number, output=receive_body[5:])
         resp.message('Message saved')
 
     # If the first word is "READ",
     elif message[0] == "READ":
         # The message will be read from the storage
-        response = read_message(number=phone_number)
+        response=database.read_message(number=phone_number)
         resp.message(response)
 
     else:
