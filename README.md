@@ -16,6 +16,9 @@ In message.py, it saves the class, which contains 'save_message' and 'read_messa
 2. 'read_message' is to simply call the saved message from the database based on the corresponded user.
 
 ### message_test.py
-This is the unit test of 'message.py'. 
+Unit test for 'message.py'. 
 
+
+
+https://github.com/poyayang/save_and_read/assets/136909810/ca58d5ab-cb34-43db-969f-bf722685be17
 
