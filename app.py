@@ -24,7 +24,7 @@ def sms():
     # If the first word is "SAVE",
     if message[0] == "SAVE":
         # The message will be save from the 6 digits
-        database.save_message(number=phone_number, output=receive_body[5:])
+        database.save_message(number=phone_number, input=receive_body[5:])
         resp.message('Message saved')
 
     # If the first word is "READ",
